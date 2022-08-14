@@ -8,6 +8,7 @@ var two = $("#2PM");
 var three = $("#3PM");
 var four = $("#4PM");
 var five = $("#5PM");
+var button = $("button");
 
 currentDay.text(moment().format('dddd MMMM Do, YYYY'));
 
@@ -128,6 +129,17 @@ var checkFive = function() {
     }
 }
 
+var buttonClick = function() {
+    alert("Your changes have been saved.");
+    localStorage.setItem("data", nine.value);
+}
+
+$(button).click(buttonClick);
+
+var load = function() {
+    nine.value = localStorage.getItem("data");
+}
+
 checkNine();
 checkTen();
 checkEleven();
@@ -137,3 +149,4 @@ checkTwo();
 checkThree();
 checkFour();
 checkFive();
+load()
