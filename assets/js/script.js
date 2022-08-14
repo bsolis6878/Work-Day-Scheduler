@@ -9,6 +9,7 @@ var three = $("#3PM");
 var four = $("#4PM");
 var five = $("#5PM");
 var button = $("button");
+var textarea = $("textarea");
 
 currentDay.text(moment().format('dddd MMMM Do, YYYY'));
 
@@ -131,13 +132,29 @@ var checkFive = function() {
 
 var buttonClick = function() {
     alert("Your changes have been saved.");
-    localStorage.setItem("data", nine.value);
+    localStorage.setItem("data1", textarea[0].value);
+    localStorage.setItem("data2", textarea[1].value);
+    localStorage.setItem("data3", textarea[2].value);
+    localStorage.setItem("data4", textarea[3].value);
+    localStorage.setItem("data5", textarea[4].value);
+    localStorage.setItem("data6", textarea[5].value);
+    localStorage.setItem("data7", textarea[6].value);
+    localStorage.setItem("data8", textarea[7].value);
+    localStorage.setItem("data9", textarea[8].value);
 }
 
 $(button).click(buttonClick);
 
 var load = function() {
-    nine.value = localStorage.getItem("data");
+    textarea[0].value = localStorage.getItem("data1")
+    textarea[1].value = localStorage.getItem("data2")
+    textarea[2].value = localStorage.getItem("data3")
+    textarea[3].value = localStorage.getItem("data4")
+    textarea[4].value = localStorage.getItem("data5")
+    textarea[5].value = localStorage.getItem("data6")
+    textarea[6].value = localStorage.getItem("data7")
+    textarea[7].value = localStorage.getItem("data8")
+    textarea[8].value = localStorage.getItem("data9")
 }
 
 checkNine();
